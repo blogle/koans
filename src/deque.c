@@ -38,6 +38,8 @@ tree_t* deque_pop(deque* queue){
   queue->front = queue->front->next;
   tree_t* tree = list_node->tree;
 
-  free(list_node->prev);
+  free(list_node);
+  queue->front->prev = NULL;
+
   return tree;
 }
